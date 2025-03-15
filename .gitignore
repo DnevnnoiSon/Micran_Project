@@ -1,0 +1,12 @@
+*.pro.user
+*.pro.user.*
+*.autosave
+Debug/
+Release/
+*.build
+*.xcodeproj
+*.app
+*.app.dSYM
+*.autosave
+*.swap
+build/
