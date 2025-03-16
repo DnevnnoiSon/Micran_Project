@@ -10,6 +10,7 @@ using namespace std;
 bool func(int a, int b, int c) {
     //Неизвестная мне реализация
     //...( По условию для примера дается с = 2)
+    return 0;  
 }
 
 
