@@ -7,24 +7,24 @@
 
 using namespace std;
 
-void ascending_sort(vector<string> &n){
-    sort(n.begin(), n.end(), [](const string &prev_el, const string &next_el){
-        return stoi(prev_el.substr(2)) < stoi(next_el.substr(2));
-    });
-}
-
-void result_output(vector<string> n){
-    for(auto el : n){
-        cout << el << endl;
-    }
-}
-
 bool func(int a, int b, int c) {
     //Неизвестная мне реализация
     //...( По условию для примера дается с = 2)
 }
 
 
+void ascending_sort(vector<string> &n){
+    sort(n.begin(), n.end(), [](const string &prev_el, const string &next_el){
+        return stoi(prev_el.substr(2)) < stoi(next_el.substr(2));
+    });
+}
+
+template<typename T>
+void result_output(T n){
+    for(auto el : n){
+        cout << el << endl;
+    }
+}
 
 int main()
 {
@@ -40,7 +40,9 @@ int main()
     array<int, 10> a;
     array<int, 12> b;
     array<int, 5> c;
-//По заданию: не совсем известная мне булева функция
+//По заданию: есть тернарный предикат, точная реализация которого мне не известна
+//Вариациями трех значений параметров функции было решено сделать контейнерами
+//В худшем случае функция вызовется 27 раз
     function<void(int, int, int)> measurement_checking = func;
 
     auto it = find_if(a.begin(), a.end(), [&](int a){
@@ -66,6 +68,5 @@ int main()
         cout << "Нужное значение в контейнере C" << endl;
          //Действия..
     }
-
     return 0;
 }
